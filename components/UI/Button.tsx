@@ -15,7 +15,7 @@ export function Button({ className, children, round, color, ...props }: ButtonPr
         (color === "primary" &&
           " bg-sky-800 text-white hover:bg-white hover:text-sky-900 hover:border-sky-800 ") +
         (color === "secondary" &&
-          " hover:bg-slate-600 hover:text-white bg-white text-slate-900 border-slate-600 ") +
+          " bg-slate-600 text-white hover:bg-white hover:text-slate-900 hover:border-slate-600 ") +
         " " +
         className
       }
