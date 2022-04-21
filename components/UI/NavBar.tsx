@@ -22,7 +22,7 @@ const NavLink = ({
 
 export default function NavBar({ links }: { links: ILink[] }) {
   return (
-    <div className="fixed top-0 shadow-sm w-full h-12 px-[5%] flex justify-between slate-600">
+    <div className="fixed top-0 shadow-sm w-full h-12 px-[5%] flex justify-between bg-white slate-600">
       <div className="flex items-center font-sans text-xl text-slate-600 font-bold">
         <NavLink
           href="/"

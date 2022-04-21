@@ -10,7 +10,6 @@ interface MenuProps {
 export default function Menu({ children, label, right, className, ...props }: MenuProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  console.log(isOpen);
 
   return (
     <div {...props}>
