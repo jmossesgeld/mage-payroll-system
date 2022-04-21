@@ -1,11 +1,9 @@
 import Link from "next/link";
 
-const links = [
-  { label: "Features", href: "/features" },
-  { label: "Pricing", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Login", href: "/login" },
-];
+export interface ILink {
+  label: string;
+  href: string;
+}
 
 const NavLink = ({
   href,
@@ -21,7 +19,7 @@ const NavLink = ({
   </Link>
 );
 
-export default function NavBar() {
+export default function NavBar({ links }: { links: ILink[] }) {
   return (
     <div className="fixed top-0 shadow-md w-full h-12 px-[5%] flex justify-between bg-slate-600">
       <div className="flex items-center font-sans text-xl text-white font-bold">

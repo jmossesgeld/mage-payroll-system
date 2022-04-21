@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import Layout from "../components/Layout";
-import Welcome from "../components/Welcome";
+import Layout from "../components/Landing/Layout";
+import Welcome from "../components/Landing/Welcome";
 
 const Home: NextPage = () => {
   return (
