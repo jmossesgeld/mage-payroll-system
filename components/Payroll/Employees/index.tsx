@@ -2,6 +2,7 @@ import useEmployees from "../../../hooks/useEmployees";
 import { Employee } from "../../../lib/types";
 import { Button } from "../../UI/Button";
 import Table, { Column } from "../../UI/Table";
+import EmployeeForm from "./EmployeeForm";
 
 export default function EmployeeTable() {
   const { employees, deleteEmployee } = useEmployees();
@@ -23,9 +24,11 @@ export default function EmployeeTable() {
       label: "",
       key: "id",
       formatFn: (value: number) => (
-        <Button className="bg-slate-50 text-sky-800 hover:bg-sky-600 hover:text-white ">
-          <i className="fa-solid fa-pen-to-square" />
-        </Button>
+        <EmployeeForm>
+          <Button className="bg-slate-50 text-sky-800 hover:bg-sky-600 hover:text-white ">
+            <i className="fa-solid fa-pen-to-square" />
+          </Button>
+        </EmployeeForm>
       ),
     },
     {
