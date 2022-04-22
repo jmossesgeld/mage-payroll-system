@@ -1,8 +1,12 @@
+import useEmployees from "../../../hooks/useEmployees";
 import { IEmployee } from "../../../lib/types";
 import { Button } from "../../UI/Button";
 import Table, { Column } from "../../UI/Table";
 
-export default function EmployeeTable({ employees }: { employees: IEmployee[] }) {
+export default function EmployeeTable() {
+  const { employees, deleteEmployee } = useEmployees();
+
+  // Set up columns for the table
   const columns: Column<IEmployee>[] = [
     { label: "First Name", key: "firstName" },
     { label: "Last Name", key: "lastName" },
@@ -17,7 +21,8 @@ export default function EmployeeTable({ employees }: { employees: IEmployee[] })
     { label: "Address 2", key: "address2" },
     {
       label: "",
-      formatFn: () => (
+      key: "id",
+      formatFn: (value: number) => (
         <Button className="bg-slate-50 text-sky-800 hover:bg-sky-600 hover:text-white ">
           <i className="fa-solid fa-pen-to-square" />
         </Button>
@@ -25,8 +30,12 @@ export default function EmployeeTable({ employees }: { employees: IEmployee[] })
     },
     {
       label: "",
-      formatFn: () => (
-        <Button className="bg-slate-50 text-red-900 hover:bg-red-600 hover:text-red-50 ">
+      key: "id",
+      formatFn: (value: number) => (
+        <Button
+          onClick={() => deleteEmployee(value)}
+          className="bg-slate-50 text-red-900 hover:bg-red-600 hover:text-red-50 "
+        >
           <i className="fa-solid fa-trash-can" />
         </Button>
       ),
