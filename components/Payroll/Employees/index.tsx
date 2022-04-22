@@ -1,5 +1,5 @@
 import useEmployees from "../../../hooks/useEmployees";
-import { IEmployee } from "../../../lib/types";
+import { Employee } from "../../../lib/types";
 import { Button } from "../../UI/Button";
 import Table, { Column } from "../../UI/Table";
 
@@ -7,7 +7,7 @@ export default function EmployeeTable() {
   const { employees, deleteEmployee } = useEmployees();
 
   // Set up columns for the table
-  const columns: Column<IEmployee>[] = [
+  const columns: Column<Employee>[] = [
     { label: "First Name", key: "firstName" },
     { label: "Last Name", key: "lastName" },
     {

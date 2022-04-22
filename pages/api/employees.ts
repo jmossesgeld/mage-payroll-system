@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IEmployee } from "../../lib/types";
+import { Employee } from "../../lib/types";
 
-const dummyEmployees: IEmployee[] = [
+const dummyEmployees: Employee[] = [
   {
     id: 0,
     firstName: "Juan",
@@ -116,6 +116,6 @@ const dummyEmployees: IEmployee[] = [
   },
 ];
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<IEmployee[]>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<Employee[]>) {
   res.status(200).json(dummyEmployees);
 }

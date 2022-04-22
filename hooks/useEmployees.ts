@@ -1,22 +1,22 @@
 import { useState, useCallback } from "react";
-import { IEmployee } from "../lib/types";
+import { Employee } from "../lib/types";
 
-var globalEmployees: IEmployee[] = [];
+var globalEmployees: Employee[] = [];
 
 export default function useEmployees() {
   const [_, setEmployees] = useState({});
 
-  const setGlobalEmployees = useCallback((employees: IEmployee[]) => {
+  const setGlobalEmployees = useCallback((employees: Employee[]) => {
     globalEmployees = employees;
     setEmployees({});
   }, []);
 
-  const addEmployee = useCallback((employee: IEmployee) => {
+  const addEmployee = useCallback((employee: Employee) => {
     globalEmployees.push(employee);
     setEmployees({});
   }, []);
 
-  const updateEmployee = useCallback((employee: IEmployee) => {
+  const updateEmployee = useCallback((employee: Employee) => {
     const index = globalEmployees.findIndex((e) => e.id === employee.id);
     globalEmployees[index] = employee;
     setEmployees({});
