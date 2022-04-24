@@ -29,11 +29,16 @@ export default function useEmployees() {
     setEmployees({});
   }, []);
 
+  const findEmployee = useCallback((id: number) => {
+    return globalEmployees.find((e) => e.id === id);
+  }, []);
+
   return {
     employees: globalEmployees,
     setEmployees: setGlobalEmployees,
     addEmployee,
     updateEmployee,
     deleteEmployee,
+    findEmployee,
   };
 }

@@ -12,9 +12,9 @@ export default function Modal({ children, label, className, ...props }: ModalPro
 
   return (
     <div {...props}>
-      <button onClick={toggle} className={className}>
+      <span onClick={toggle} className={className}>
         {label}
-      </button>
+      </span>
       {isOpen && (
         <div
           onClick={(event) => {
@@ -22,7 +22,7 @@ export default function Modal({ children, label, className, ...props }: ModalPro
               toggle();
             }
           }}
-          className={`fixed left-0 top-0 w-full h-full shadow-md z-10 bg-[rgb(0,0,0)] bg-[rgba(0,0,0,0.4)] flex justify-center items-center`}
+          className={`fixed left-0 top-0 w-full h-full shadow-sm z-10 bg-[rgb(0,0,0)] bg-[rgba(0,0,0,0.4)] flex justify-center items-center`}
         >
           {children}
         </div>

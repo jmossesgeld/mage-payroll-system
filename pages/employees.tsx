@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import EmployeeTable from "../components/Payroll/Employees";
+import Employees from "../components/Payroll/Employees";
 import Layout from "../components/Payroll/Layout";
 import useEmployees from "../hooks/useEmployees";
 import { Employee } from "../lib/types";
 
-export default function Employees() {
+export default function EmployeesPage() {
   const { setEmployees } = useEmployees();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Employees() {
 
   return (
     <Layout>
-      <EmployeeTable />
+      <Employees />
     </Layout>
   );
 }

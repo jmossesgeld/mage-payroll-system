@@ -15,10 +15,10 @@ interface TableProps<T> {
 
 export default function Table<T>({ data, columns, cellPadding }: TableProps<T>) {
   return (
-    <table className="font-roboto">
+    <table className="font-roboto bg-white">
       {/* Display header row */}
-      <thead>
-        <tr className="sticky border-2 text-slate-600 font-bold ">
+      <thead className="sticky top-0 bg-white ">
+        <tr className="text-slate-600 font-bold  ">
           {columns.map((column, idx) => (
             <td key={idx} className={`py-${cellPadding ?? 2} px-4`}>
               {column.label}
