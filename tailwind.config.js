@@ -6,6 +6,7 @@ module.exports = {
       serif: "Georgia, serif",
       mono: "Consolas",
       roboto: "Roboto, Calibri, sans-serif",
+      calibri: "Calibri, sans-serif",
     },
     extend: {
       keyframes: {

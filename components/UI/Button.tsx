@@ -1,3 +1,5 @@
+import Ripple from "material-ripple-effects";
+
 interface ButtonProps {
   className?: string;
   children?: React.ReactNode;
@@ -7,6 +9,8 @@ interface ButtonProps {
 }
 
 export function Button({ className, children, round, color, ...props }: ButtonProps) {
+  const ripple = new Ripple();
+
   return (
     <button
       className={
@@ -19,6 +23,10 @@ export function Button({ className, children, round, color, ...props }: ButtonPr
         " " +
         className
       }
+      onClick={(e) => {
+        ripple.create(e, "dark");
+        props.onClick && props.onClick();
+      }}
       {...props}
     >
       {children}

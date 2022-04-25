@@ -15,9 +15,9 @@ interface TableProps<T> {
 
 export default function Table<T>({ data, columns, cellPadding }: TableProps<T>) {
   return (
-    <table className="font-roboto bg-white">
+    <table className="font-roboto">
       {/* Display header row */}
-      <thead className="sticky top-0 bg-white ">
+      <thead className="sticky top-0 left-0 bg-white">
         <tr className="text-slate-600 font-bold  ">
           {columns.map((column, idx) => (
             <td key={idx} className={`py-${cellPadding ?? 2} px-4`}>

@@ -11,7 +11,7 @@ export default function Modal({ children, label, className, ...props }: ModalPro
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div {...props}>
+    <div {...props} className="inline">
       <span onClick={toggle} className={className}>
         {label}
       </span>
