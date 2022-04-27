@@ -4,28 +4,13 @@ import { Employee } from "../../../lib/types";
 import { uniqueID } from "../../../lib";
 import React, { useState } from "react";
 import Input from "../../UI/Input";
+import Radio from "../../UI/Radio";
 
 interface EmployeeFormProps {
   id?: number;
   children: React.ReactNode;
   className?: string;
 }
-
-interface RadioProps {
-  label: string;
-  name: string;
-  [key: string]: any;
-}
-
-
-const Radio = ({ label, name, ...props }: RadioProps) => {
-  return (
-    <label>
-      <input type="radio" name={name} className="mr-4 transition-all hover:scale-125" />
-      {label}
-    </label>
-  );
-};
 
 export default function EmployeeForm({ id, children, className }: EmployeeFormProps) {
   const defaultValues = {
@@ -44,6 +29,8 @@ export default function EmployeeForm({ id, children, className }: EmployeeFormPr
   };
 
   const { findEmployee } = useEmployees();
+
+  // Populate the form with the employee's data if it's an edit
   const [formState, setFormState] = useState<Employee>(
     id ? findEmployee(id) ?? defaultValues : defaultValues
   );
@@ -58,8 +45,11 @@ export default function EmployeeForm({ id, children, className }: EmployeeFormPr
           <Input placeholder="Last Name" />
           <Input placeholder="Middle Name" />
           <Input placeholder="Suffix (Jr./Sr.)" />
-          <Input placeholder="Room, House No., Building, Street, Subdivision, Barangay" block />
-          <Input placeholder="Municipality, City, Province" block />
+          <Input
+            placeholder="Room, House No., Building, Street, Subdivision, Barangay"
+            containerClassName="w-full"
+          />
+          <Input placeholder="Municipality, City, Province" containerClassName="w-full" />
           <div className="flex flex-col w-1/2 p-4">
             <Radio label="Daily" name="salaryType" />
             <Radio label="Fixed (Monthly)" name="salaryType" />
