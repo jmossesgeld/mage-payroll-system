@@ -44,7 +44,7 @@ export default function useEmployees() {
   );
 
   const deleteEmployee = useCallback(
-    (id: number) => {
+    (id: number | string) => {
       const index = globalEmployees.findIndex((e) => e.id === id);
       console.log("Found employee for deleting: ", globalEmployees[index]);
       globalEmployees.splice(index, 1);
@@ -53,7 +53,7 @@ export default function useEmployees() {
     [dispatch]
   );
 
-  const findEmployee = useCallback((id: number) => {
+  const findEmployee = useCallback((id: number | string) => {
     return globalEmployees.find((e) => e.id === id);
   }, []);
 

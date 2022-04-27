@@ -1,12 +1,12 @@
 export interface Employee {
-  id: number;
+  id: number | string;
   firstName: string;
   lastName: string;
   middleName: string;
   suffix: string;
   address1: string;
   address2: string;
-  salaryType: string;
+  salaryType: "daily" | "fixed";
   salaryAmount: number;
   restDays: number[];
   workingHours: { from: string; to: string };
