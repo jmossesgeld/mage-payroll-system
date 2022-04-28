@@ -25,7 +25,7 @@ export function Button({ className, children, round, color, ...props }: ButtonPr
       }
       onClick={(e) => {
         ripple.create(e, "dark");
-        props.onClick && props.onClick();
+        if (props.onClick) props.onClick();
       }}
       {...props}
     >

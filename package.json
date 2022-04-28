@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.0",
     "cntl": "^1.0.0",
     "framer-motion": "^6.3.0",
     "material-ripple-effects": "^2.0.1",

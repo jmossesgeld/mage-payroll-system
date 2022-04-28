@@ -7,6 +7,7 @@ module.exports = {
       mono: "Consolas",
       roboto: "Roboto, Calibri, sans-serif",
       calibri: "Calibri, sans-serif",
+      segoeui: "Segoe UI, sans-serif",
     },
     extend: {
       keyframes: {

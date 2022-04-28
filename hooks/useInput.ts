@@ -14,7 +14,7 @@ export interface InputHook {
   value: string;
   isValid: any;
   error: boolean;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: { target: { value: string } }) => void;
   onBlur: (event: any) => void;
   reset: () => void;
 }
@@ -43,7 +43,7 @@ const useInput = (initialValue?: string, validateValue?: (value: string) => bool
   const valueIsValid = validateValue?.(inputState.value) ?? true;
   const error = !valueIsValid && inputState.isTouched;
 
-  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: { target: { value: string } }) => {
     console.log("onChange: ", event.target.value);
     dispatch({ type: "INPUT", value: event.target.value });
   };
