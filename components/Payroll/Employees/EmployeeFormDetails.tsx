@@ -20,7 +20,7 @@ const SalaryTypeRadio = ({ checked, label }: { checked: boolean; label: string }
   </span>
 );
 
-const WorkDayCheckbox = ({ workday }: { workday: string }) => {
+const Checkbox = ({ workday }: { workday: string }) => {
   return (
     <label className="mr-2">
       <input className="mr-2" type="checkbox" name="restDays" />
@@ -102,9 +102,26 @@ export default function EmployeeFormDetails({ id }: { id?: number | string }) {
         <h3 className="block w-full text-sm">Rest Days:</h3>
         {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map(
           (day) => (
-            <WorkDayCheckbox key={day} workday={day} />
+            <Checkbox key={day} workday={day} />
           )
         )}
+      </div>
+      <div className="flex flex-col w-full md:w-1/2 p-4">
+        <h3 className="block w-full text-sm">Eligibilities for Deduction:</h3>
+        {["SSS", "Philhealth", "Pag-ibig"].map((day) => (
+          <Checkbox key={day} workday={day} />
+        ))}
+      </div>
+      <div className="flex w-full flex-wrap p-4 gap-3">
+        <h3 className="block w-full text-sm">Working Hours:</h3>
+        <div>
+          <input type="time" className="border-2 p-2 block" />
+          <span className="text-xs text-slate-500">Time in</span>
+        </div>
+        <div>
+          <input type="time" className="border-2 p-2 block" />
+          <span className="text-xs text-slate-500">Time out</span>
+        </div>
       </div>
     </form>
   );
