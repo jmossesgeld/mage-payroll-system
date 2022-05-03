@@ -5,6 +5,7 @@ import React, { useMemo, useState } from "react";
 import Input from "../../UI/Input";
 import useInput from "../../../hooks/useInput";
 import { RadioGroup } from "@headlessui/react";
+import { Button } from "../../UI/Button";
 
 const required = (value: string) => {
   return value.length > 0;
@@ -31,6 +32,10 @@ const Checkbox = ({ workday }: { workday: string }) => {
 
 export default function EmployeeFormDetails({ id }: { id?: number | string }) {
   const { findEmployee } = useEmployees();
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
 
   const newEmployeeValues: Employee = useMemo(() => {
     return {
@@ -68,7 +73,7 @@ export default function EmployeeFormDetails({ id }: { id?: number | string }) {
   console.log("form rendered");
 
   return (
-    <form className="flex flex-wrap items-stretch">
+    <form className="flex flex-wrap items-stretch" onSubmit={onSubmit}>
       <Input placeholder="First name*" {...firstName} />
       <Input placeholder="Last name" {...lastName} />
       <Input placeholder="Middle name" {...middleName} />
@@ -112,16 +117,21 @@ export default function EmployeeFormDetails({ id }: { id?: number | string }) {
           <Checkbox key={day} workday={day} />
         ))}
       </div>
-      <div className="flex w-full flex-wrap p-4 gap-3">
+      <div className="flex w-full md:w-1/2 flex-col p-4 gap-3">
         <h3 className="block w-full text-sm">Working Hours:</h3>
-        <div>
-          <input type="time" className="border-2 p-2 block" />
-          <span className="text-xs text-slate-500">Time in</span>
+        <div className="flex">
+          <div>
+            <input type="time" className="border-2 p-2 block" />
+            <span className="text-xs text-slate-500">Time in</span>
+          </div>
+          <div>
+            <input type="time" className="border-2 p-2 block" />
+            <span className="text-xs text-slate-500">Time out</span>
+          </div>
         </div>
-        <div>
-          <input type="time" className="border-2 p-2 block" />
-          <span className="text-xs text-slate-500">Time out</span>
-        </div>
+      </div>
+      <div className="flex w-full md:w-1/2 items-center justify-end flex-wrap p-4">
+        <Button color="primary">Apply Changes</Button>
       </div>
     </form>
   );
