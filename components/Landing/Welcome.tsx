@@ -1,6 +1,7 @@
 import { Button } from "../UI/Button";
 import { motion } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -45,9 +46,13 @@ export default function Welcome() {
         <Button round color="primary" className="shadow-md shadow-sky-300">
           Get Started
         </Button>
-        <Button round color="secondary" className="shadow-md shadow-sky-300">
-          Try Demo
-        </Button>
+        <Link href="/employees">
+          <a>
+            <Button round color="secondary" className="shadow-md shadow-sky-300">
+              Try Demo
+            </Button>
+          </a>
+        </Link>
       </FadeIn>
       <FadeIn
         delay={2}

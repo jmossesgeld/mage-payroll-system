@@ -8,7 +8,7 @@ export interface Employee {
   address2: string;
   salaryType: "daily" | "fixed";
   salaryAmount: number;
-  restDays: number[];
+  restDays: { 0: boolean; 1: boolean; 2: boolean; 3: boolean; 4: boolean; 5: boolean; 6: boolean };
   workingHours: { from: string; to: string };
   eligibilities: { SSS: boolean; PHIC: boolean; HDMF: boolean };
 }

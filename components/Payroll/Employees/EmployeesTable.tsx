@@ -16,9 +16,16 @@ export default function EmployeesTable() {
       formatFn: (value: number) => `$${value.toLocaleString()}`,
       className: "text-right",
     },
-    { label: "Salary Type", key: "salaryType", className: "text-right" },
-    { label: "Address 1", key: "address1" },
-    { label: "Address 2", key: "address2" },
+    {
+      label: "Salary Type",
+      key: "salaryType",
+      className: "text-right",
+      formatFn: (value: string) => (
+        <div className="text-left text-sky-700">{value === "daily" ? "Daily" : "Monthly"}</div>
+      ),
+    },
+    { label: "House No., Building, Street, Brgy", key: "address1" },
+    { label: "City/Municipality, Province", key: "address2" },
     {
       label: "",
       key: "id",

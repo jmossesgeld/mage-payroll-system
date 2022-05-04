@@ -4,10 +4,11 @@ interface ModalProps {
   label: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  state: [boolean, (bool: boolean) => void];
 }
 
-export default function Modal({ children, label, className, ...props }: ModalProps) {
-  const [isOpen, setIsOpen] = React.useState(false);
+export default function Modal({ children, label, className, state, ...props }: ModalProps) {
+  const [isOpen, setIsOpen] = state;
   const toggle = () => setIsOpen(!isOpen);
 
   return (
