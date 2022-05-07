@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../../UI/Button";
 import EmployeeForm from "./EmployeeForm";
 import EmployeeSearch from "./EmployeeSearch";
@@ -12,6 +13,11 @@ export default function Employees() {
           <EmployeesTable />
         </div>
         <div className="py-6 px-4 flex gap-3 justify-end">
+          <Link href="/timekeeping">
+            <a>
+              <Button color="secondary">Go to Time Keeping</Button>
+            </a>
+          </Link>
           <EmployeeSearch />
           <EmployeeForm label={<Button color="primary">Add New Employee</Button>} />
         </div>
