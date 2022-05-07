@@ -1,5 +1,6 @@
 import { Button } from "../../UI/Button";
 import EmployeeForm from "./EmployeeForm";
+import EmployeeSearch from "./EmployeeSearch";
 import EmployeesTable from "./EmployeesTable";
 
 export default function Employees() {
@@ -11,10 +12,8 @@ export default function Employees() {
           <EmployeesTable />
         </div>
         <div className="py-6 px-4 flex gap-3 justify-end">
-          <Button color="secondary">Search Employee</Button>
-          <EmployeeForm>
-            <Button color="primary">Add New Employee</Button>
-          </EmployeeForm>
+          <EmployeeSearch />
+          <EmployeeForm label={<Button color="primary">Add New Employee</Button>} />
         </div>
       </div>
     </div>

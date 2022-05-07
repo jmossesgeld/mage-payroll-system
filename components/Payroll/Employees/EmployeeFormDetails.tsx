@@ -203,6 +203,7 @@ export default function EmployeeFormDetails({ id, close }: EmployeeFormDetailsPr
           <div>
             <input
               type="time"
+              id="timeIn"
               className="border-2 p-2 block"
               value={workingHours.from}
               onChange={(e) =>
@@ -211,11 +212,14 @@ export default function EmployeeFormDetails({ id, close }: EmployeeFormDetailsPr
                 })
               }
             />
-            <span className="text-xs text-slate-500">Time in</span>
+            <label htmlFor="timeIn" className="text-xs text-slate-500">
+              Time in
+            </label>
           </div>
           <div>
             <input
               type="time"
+              id="timeOut"
               className="border-2 p-2 block"
               value={workingHours.to}
               onChange={(e) =>
@@ -224,7 +228,9 @@ export default function EmployeeFormDetails({ id, close }: EmployeeFormDetailsPr
                 })
               }
             />
-            <span className="text-xs text-slate-500">Time out</span>
+            <label htmlFor="timeOut" className="text-xs text-slate-500">
+              Time out
+            </label>
           </div>
         </div>
       </div>

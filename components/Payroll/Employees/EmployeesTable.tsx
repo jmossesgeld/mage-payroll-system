@@ -7,6 +7,7 @@ import { Button } from "../../UI/Button";
 export default function EmployeesTable() {
   const { employees, deleteEmployee } = useEmployees();
 
+  // Prepare columns
   const columns: Column<Employee>[] = [
     { label: "First Name", key: "firstName" },
     { label: "Last Name", key: "lastName" },
@@ -30,11 +31,14 @@ export default function EmployeesTable() {
       label: "",
       key: "id",
       formatFn: (value: number) => (
-        <EmployeeForm id={value}>
-          <Button className="bg-slate-50 text-sky-800 hover:bg-sky-600 hover:text-white ">
-            <i className="fa-solid fa-pen-to-square" />
-          </Button>
-        </EmployeeForm>
+        <EmployeeForm
+          id={value}
+          label={
+            <Button className="bg-slate-50 text-sky-800 hover:bg-sky-600 hover:text-white ">
+              <i className="fa-solid fa-pen-to-square" />
+            </Button>
+          }
+        ></EmployeeForm>
       ),
     },
     {
