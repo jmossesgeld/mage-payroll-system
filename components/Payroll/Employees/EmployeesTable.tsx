@@ -1,4 +1,4 @@
-import useEmployees from "../../../hooks/useEmployees";
+import useEmployees from "../../../hooks/store/useEmployees";
 import EmployeeForm from "./EmployeeForm";
 import { Employee } from "../../../lib/types";
 import Table, { Column } from "../../UI/Table";

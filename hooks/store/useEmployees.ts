@@ -1,5 +1,5 @@
 import { useState, useCallback, SetStateAction, Dispatch, useEffect } from "react";
-import { Employee } from "../lib/types";
+import { Employee } from "../../lib/types";
 
 var globalEmployees: Employee[] = [];
 var listeners: Dispatch<SetStateAction<{}>>[] = [];

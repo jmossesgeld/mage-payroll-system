@@ -17,7 +17,7 @@ const links: ILink[] = [
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="font-roboto">
+    <div className="font-roboto overflow-auto">
       <NavBar links={links} />
       {children}
     </div>
