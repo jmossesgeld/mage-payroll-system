@@ -12,14 +12,22 @@ export default function Employees() {
         <div className="w-full flex flex-col shadow-lg h-[60vh] overflow-auto bg-white">
           <EmployeesTable />
         </div>
-        <div className="py-6 px-4 flex gap-3 justify-end">
+        <div className="py-6 px-4 flex flex-col sm:flex-row gap-3 justify-end items-stretch">
+          <EmployeeSearch />
+          <EmployeeForm
+            label={
+              <Button color="primary" className="w-full">
+                Add New Employee
+              </Button>
+            }
+          />
           <Link href="/timekeeping">
             <a>
-              <Button color="secondary">Go to Time Keeping</Button>
+              <Button color="secondary" className="w-full">
+                Go to Time Keeping
+              </Button>
             </a>
           </Link>
-          <EmployeeSearch />
-          <EmployeeForm label={<Button color="primary">Add New Employee</Button>} />
         </div>
       </div>
     </div>

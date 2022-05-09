@@ -34,14 +34,11 @@ export default function useEmployees() {
     [dispatch]
   );
 
-  const updateEmployee = useCallback(
-    (employee: Employee) => {
-      const index = globalEmployees.findIndex((e) => e.id === employee.id);
-      globalEmployees[index] = employee;
-      dispatch();
-    },
-    [dispatch]
-  );
+  const updateEmployee = useCallback(() => {
+    // const index = globalEmployees.findIndex((e) => e.id === employee.id);
+    // globalEmployees[index] = employee;
+    dispatch();
+  }, [dispatch]);
 
   const deleteEmployee = useCallback(
     (id: number | string) => {

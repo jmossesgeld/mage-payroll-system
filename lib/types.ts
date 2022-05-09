@@ -16,17 +16,20 @@ export interface Employee {
   restDays: { 0: boolean; 1: boolean; 2: boolean; 3: boolean; 4: boolean; 5: boolean; 6: boolean };
   workingHours: { from: string; to: string };
   eligibilities: { SSS: boolean; PHIC: boolean; HDMF: boolean };
+  timeRecords?: TimeRecords;
 }
 
 export interface TimeRecord {
-  date: string;
   timeIn: string;
   timeOut: string;
-  employeeId: Employee["id"];
   isRestDay: boolean;
   isAbsent: boolean;
   isRegularHoliday: boolean;
   isSpecialHoliday: boolean;
+}
+
+export interface TimeRecords {
+  [key: string]: TimeRecord;
 }
 
 export interface Salary {

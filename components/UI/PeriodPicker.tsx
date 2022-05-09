@@ -10,7 +10,7 @@ interface PeriodPickerProps {
 export default function PeriodPicker({ period, setPeriod }: PeriodPickerProps) {
   return (
     <Tooltip title="Choose payroll period" placement="top">
-      <div>
+      <div className="flex">
         <TextField
           type="date"
           label="from"

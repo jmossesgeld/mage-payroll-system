@@ -123,8 +123,10 @@ export default function EmployeeFormDetails({ id, close }: EmployeeFormDetailsPr
         workingHours: workingHours,
       };
 
+      Object.assign(initialFormValues, employee);
+
       // If the employee is being edited, update the employee otherwise add new employee
-      id != undefined ? updateEmployee(employee) : addEmployee(employee);
+      id != undefined ? updateEmployee() : addEmployee(employee);
       close();
     } else {
       alert("Please fill out all required fields.");

@@ -20,8 +20,10 @@ export function Button({ className, children, round, color, ...props }: ButtonPr
           " bg-sky-800 text-white hover:bg-white hover:text-sky-900 hover:border-sky-800 ") +
         (color === "secondary" &&
           " bg-slate-600 text-white hover:bg-white hover:text-slate-900 hover:border-slate-600 ") +
+        " " +
         (color === "success" &&
           " bg-green-600 text-white hover:bg-white hover:text-green-900 hover:border-green-600 ") +
+        " " +
         className
       }
       onClick={(e) => {
