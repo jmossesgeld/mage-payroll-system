@@ -6,7 +6,7 @@ import useEmployees from "../../../hooks/store/useEmployees";
 
 export default function Timekeeping() {
   const periodState = usePeriod();
-  const { employees } = useEmployees();
+  const { employees, updateEmployee } = useEmployees();
 
   return (
     <div className="mt-16 p-8 border-2 flex mx-4 lg:mx-52 flex-col gap-8">
@@ -16,7 +16,7 @@ export default function Timekeeping() {
         </div>
         <PeriodPicker {...periodState} />
       </div>
-      <TimeCard employee={employees[0]} period={periodState.period} />
+      <TimeCard employee={employees[0]} updateEmployee={updateEmployee} period={periodState.period} />
     </div>
   );
 }

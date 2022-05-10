@@ -1,10 +1,16 @@
 import { getDaysInBetween } from "../../../lib";
 import { Employee, Period } from "../../../lib/types";
 
-export default function TimeCard({ employee, period }: { employee: Employee; period: Period }) {
-  const days = getDaysInBetween(period.from, period.to);
+interface TimeCardProps {
+  employee: Employee;
+  period: Period;
+  updateEmployee: () => void;
+}
 
-  days.forEach((day) => {
+export default function TimeCard({ employee, period, updateEmployee }: TimeCardProps) {
+  const daysInBetween = getDaysInBetween(period.from, period.to);
+
+  daysInBetween.forEach((day) => {
     // Create new time record if it doesn't exist
     if (employee.timeRecords === undefined) employee.timeRecords = {};
     employee.timeRecords[day] = employee.timeRecords[day] || {
@@ -15,6 +21,7 @@ export default function TimeCard({ employee, period }: { employee: Employee; per
       isRegularHoliday: false,
       isSpecialHoliday: false,
     };
+    updateEmployee();
   });
 
   return (
